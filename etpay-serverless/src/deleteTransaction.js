@@ -1,7 +1,7 @@
 'use strict';
 
 const AWS = require('aws-sdk');
-const TABLE_NAME = 'Transferencias';
+const TABLE_NAME = process.env.TABLE_NAME;
 
 module.exports.deleteTransaction = async (event) => {
   const { id } = event.pathParameters;

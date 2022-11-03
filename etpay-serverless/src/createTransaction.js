@@ -1,7 +1,7 @@
 'use strict';
 
 const AWS = require('aws-sdk');
-const TABLE_NAME = 'Transferencias';
+const TABLE_NAME = process.env.TABLE_NAME;
 
 module.exports.createTransaction = async (event) => {
   const json = JSON.parse(event.body);
