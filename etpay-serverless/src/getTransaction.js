@@ -6,23 +6,14 @@ const TABLE_NAME = process.env.TABLE_NAME;
 module.exports.getTransaction = async (event) => {
   const { id } = event.pathParameters;
   const dynamoDB = new AWS.DynamoDB.DocumentClient();
-  try {
-    const transaction = await (
-      dynamoDB
-      .get({
-        TableName: TABLE_NAME,
-        Key: { id }
-      })
-      .promise()
-    );
-  } catch (error) {
-    return {
-      status: 500,
-      body: {
-        error,
-      },
-    };
-  }
+  const transaction = await (
+    dynamoDB
+    .get({
+      TableName: TABLE_NAME,
+      Key: { id }
+    })
+    .promise()
+  );
 
   return {
     status: 200,
