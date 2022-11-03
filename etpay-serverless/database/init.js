@@ -16,7 +16,6 @@ const init = async (event) => {
     .promise()
   );
   const databaseJSON = JSON.parse(databaseFile.Body);
-
   const dynamoDB = new AWS.DynamoDB.DocumentClient({region: 'us-east-1'});
   for (let value in databaseJSON) {
     await (
@@ -29,12 +28,7 @@ const init = async (event) => {
     );
   }
 
-  return {
-    status: 200,
-    body: {
-      message: 'base de datos inicializada',
-    },
-  };
+  console.log('Datos cargados a la base de datos con exito');
 };
 
 init();

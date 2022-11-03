@@ -23,8 +23,6 @@ module.exports.updateTransaction = async (event) => {
 
   return {
     status: 200,
-    body: JSON.stringify({
-      message: 'melo perro',
-    }),
+    body: transaction,
   };
 };

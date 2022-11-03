@@ -10,17 +10,15 @@ module.exports.deleteTransaction = async (event) => {
     dynamoDB
     .delete({
       TableName: TABLE_NAME,
-      Key: {
-        id: id,
-      }
+      Key: { id }
     })
     .promise()
   );
 
   return {
     status: 200,
-    body: JSON.stringify({
-      message: 'Eliminado mi perrito :(',
-    }),
+    body: {
+      message: `El registro ${id}, fue eliminado correctamente`,
+    },
   };
 };

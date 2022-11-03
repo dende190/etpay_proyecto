@@ -10,9 +10,7 @@ module.exports.getTransaction = async (event) => {
     dynamoDB
     .get({
       TableName: TABLE_NAME,
-      Key: {
-        id: id,
-      }
+      Key: { id }
     })
     .promise()
   );

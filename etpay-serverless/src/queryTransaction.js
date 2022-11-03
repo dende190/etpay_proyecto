@@ -9,15 +9,14 @@ module.exports.queryTransaction = async (event) => {
 
   const dynamoDB = new AWS.DynamoDB.DocumentClient();
   const condition = queryBuild.generateCondition(where);
-  const params = {
+  const transactions = await (
+    dynamoDB
+    .scan({
       TableName: TABLE_NAME,
       ProjectionExpression: select,
       FilterExpression: condition.updateExpressions.join(' AND '),
       ExpressionAttributeValues: condition.expressionAttributeValues,
-    };
-  const transactions = await (
-    dynamoDB
-    .scan(params)
+    })
     .promise()
   );
 
