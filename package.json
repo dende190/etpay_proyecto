@@ -1,0 +1,24 @@
+{
+  "name": "etpay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dende190/etpay_proyecto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dende190/etpay_proyecto/issues"
+  },
+  "homepage": "https://github.com/dende190/etpay_proyecto#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1246.0",
+    "serverless": "^3.23.0"
+  }
+}

@@ -1,0 +1,59 @@
+service: etpay-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource:
+        - arn:aws:dynamodb:us-east-1:239019965499:table/Transferencias
+
+
+functions:
+  getTransaction:
+    handler: src/getTransaction.getTransaction
+    events:
+      - httpApi:
+          path: /transaction/{id}
+          method: get
+  getAllTransactions:
+    handler: src/getAllTransactions.getAllTransactions
+    events:
+      - httpApi:
+          path: /transaction
+          method: get
+  createTransaction:
+    handler: src/createTransaction.createTransaction
+    events:
+      - httpApi:
+          path: /transaction
+          method: post
+  updateTransaction:
+    handler: src/updateTransaction.updateTransaction
+    events:
+      - httpApi:
+          path: /transaction/{id}
+          method: put
+  deleteTransaction:
+    handler: src/deleteTransaction.deleteTransaction
+    events:
+      - httpApi:
+          path: /transaction/{id}
+          method: delete
+
+resources:
+  Resources:
+    Transferencias:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Transferencias
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
