@@ -9,16 +9,25 @@ module.exports.queryTransaction = async (event) => {
 
   const dynamoDB = new AWS.DynamoDB.DocumentClient();
   const condition = queryBuild.generateCondition(where);
-  const transactions = await (
-    dynamoDB
-    .scan({
-      TableName: TABLE_NAME,
-      ProjectionExpression: select,
-      FilterExpression: condition.updateExpressions.join(' AND '),
-      ExpressionAttributeValues: condition.expressionAttributeValues,
-    })
-    .promise()
-  );
+  try {
+    const transactions = await (
+      dynamoDB
+      .scan({
+        TableName: TABLE_NAME,
+        ProjectionExpression: select,
+        FilterExpression: condition.updateExpressions.join(' AND '),
+        ExpressionAttributeValues: condition.expressionAttributeValues,
+      })
+      .promise()
+    );
+  } catch (error) {
+    return {
+      status: 500,
+      body: {
+        error,
+      },
+    };
+  }
 
   return {
     status: 200,
