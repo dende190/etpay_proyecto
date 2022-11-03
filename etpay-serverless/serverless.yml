@@ -47,6 +47,12 @@ functions:
       - httpApi:
           path: /transaction/{id}
           method: delete
+  queryTransaction:
+    handler: src/queryTransaction.queryTransaction
+    events:
+      - httpApi:
+          path: /transaction/query
+          method: post
 
 resources:
   Resources:
