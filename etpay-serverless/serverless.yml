@@ -8,9 +8,13 @@ provider:
     - Effect: Allow
       Action:
         - dynamodb:*
+        - s3:*
       Resource:
         - arn:aws:dynamodb:us-east-1:239019965499:table/Transferencias
-
+        - arn:aws:s3:::database-json
+  environment:
+    TABLE_NAME:
+      Ref: Transferencias
 
 functions:
   getTransaction:
