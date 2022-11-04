@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "database_init": "node database/init.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/dende190/etpay_proyecto#readme",
   "dependencies": {
     "aws-sdk": "^2.1246.0",
-    "serverless": "^3.23.0"
+    "serverless": "^3.23.0",
+    "uuid": "^9.0.0"
   }
 }

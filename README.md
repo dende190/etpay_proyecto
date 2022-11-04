@@ -1,6 +1,7 @@
 # etpay_proyecto
 
 **Hola !!**
+
 Si estas aca estas en el lugar correcto 😏, vamos a manejar de la mejor forma
 esas transacciones !
 
@@ -16,12 +17,18 @@ enviar peticiones a una API,
 
 ### Solicitar informacion (GET) 🧐
 #### Solicitar todos los datos
-**URL**: [a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction)
+**URL**:
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction]
+(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction)
+
 Usando esta url vas a poder obtener todas las transacciones que existen en la
 base de datos 😱
 
 #### Solicitar solo un dato
-**URL**: [a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+**URL**:
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}]
+(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+
 **Parametro de la url ({id})**: este es el indentificador con el que se creo el
 registro (puedes obtenerlo tambien revisando todos los datos)
 
@@ -29,9 +36,13 @@ Usando esta url vas a poder obtener el registro que buscas en las transacciones
 😱
 
 ## Crear un registro (POST) 🤓
-**URL**: [a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction)
+**URL**:
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction]
+(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction)
+
 Puedes usar cualquiera de los dos formatos JSON mostrados acontinuacion para
 crear una nueva transaccion en la base de datos:
+
 **Formato JSON**:
 ```json
 {
@@ -80,13 +91,17 @@ crear una nueva transaccion en la base de datos:
 ```
 
 ## Actualizar un registro (PUT) 😰
-**URL**: [a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+**URL**:
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}]
+(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+
 **Parametro de la url ({id})**: este es el indentificador con el que se creo el
 registro (puedes obtenerlo tambien revisando todos los datos)
 
 Siguiendo los formatos mostrados anteriormente y los datos obtenidos usando las
 consultas GET, puedes identificar el valor que deseas modificar (puedes
 modificar mas de un valor)
+
 **Formato JSON**:
 ```json
 {
@@ -98,7 +113,10 @@ modificar mas de un valor)
 ```
 
 ## Eliminar un registro (DELETE) ☠️
-**URL**: [a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+**URL**:
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}]
+(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+
 **Parametro de la url ({id})**: este es el indentificador con el que se creo el
 registro (puedes obtenerlo tambien revisando todos los datos)
 
@@ -106,11 +124,14 @@ Usando esta URL eliminaras el registro seleccionado, ten cuidado no hay vuelta
 atras !
 
 ## Consltas mas elavoradas (POST) 🧑🏽‍💻
-**URL**: [a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/query](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/query)
+**URL**:
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/query]
+(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/query)
 
 Desde esta URL podras hacer consultas mas elaboradas para traer informacion, no
 necesitas entrar a una base de datos para obtener los datos que quieres y de
 esta forma es mas facil que programar 😱
+
 **Formato JSON**:
 ```json
 {
