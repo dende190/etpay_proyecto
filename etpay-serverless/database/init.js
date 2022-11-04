@@ -1,7 +1,7 @@
 'use strict';
 
 const AWS = require('aws-sdk');
-const { normalizeData } = require('../utils/normalize_data');
+const { transformData } = require('../utils/tranform_data');
 const TABLE_NAME = 'Transferencias';
 const S3_BUCKET = 'database-json';
 const S3_FILE = 'database_etpay.json';
@@ -23,7 +23,7 @@ const init = async (event) => {
       dynamoDB
       .put({
         TableName: TABLE_NAME,
-        Item: normalizeData.init(databaseJSON[value]),
+        Item: transformData.init(databaseJSON[value]),
       })
       .promise()
     );
