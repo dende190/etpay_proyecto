@@ -23,6 +23,10 @@ module.exports.queryTransaction = async (event) => {
 
   return {
     status: 200,
-    body: transactions.Items,
+    body: (
+      transactions.Items.length ?
+      transactions.Items :
+      {message: 'No se encontraron registros'}
+    ),
   };
 };

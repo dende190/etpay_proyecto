@@ -17,6 +17,6 @@ module.exports.getTransaction = async (event) => {
 
   return {
     status: 200,
-    body: transaction.Item,
+    body: (transaction.Item || {message: 'No se encontro registro'}),
   };
 };
