@@ -7,20 +7,21 @@ const TABLE_NAME = process.env.TABLE_NAME;
 module.exports.queryTransaction = async (event) => {
   const { select, conditions } = JSON.parse(event.body);
 
-  const dynamoDB = new AWS.DynamoDB.DocumentClient();
-  const condition = conditionsBuild.query(conditions);
-
-  const transactions = await (
-    dynamoDB
-    .scan({
-      TableName: TABLE_NAME,
-      ProjectionExpression: select,
+  let params = {
+    TableName: TABLE_NAME,
+    ProjectionExpression: select,
+  };
+  if (conditions) {
+    const condition = conditionsBuild.query(conditions);
+    params = {
+      ...params,
       FilterExpression: condition.filterExpression,
       ExpressionAttributeValues: condition.expressionAttributeValues,
-    })
-    .promise()
-  );
+    }
+  }
 
+  const dynamoDB = new AWS.DynamoDB.DocumentClient();
+  const transactions = await dynamoDB.scan(params).promise();
   return {
     status: 200,
     body: (
