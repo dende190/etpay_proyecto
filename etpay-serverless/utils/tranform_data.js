@@ -22,7 +22,10 @@ const regexDateDDMMYYYY = (
 const transformData = {
   init: (transactionsData) => {
     for (let transactionProperty in transactionsData) {
-      if (fieldsDates.includes(transactionProperty)) {
+      if (
+        fieldsDates.includes(transactionProperty) &&
+        transactionsData[transactionProperty]
+      ) {
         transactionsData[transactionProperty] = (
           transformData
           .dateToTimestamp(transactionsData[transactionProperty])

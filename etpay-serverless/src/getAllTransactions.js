@@ -15,6 +15,6 @@ module.exports.getAllTransactions = async () => {
 
   return {
     status: 200,
-    body: (transactions.Items || {message: 'Sin registros'})),
+    body: transactions.Items,
   };
 };

@@ -14,8 +14,11 @@ module.exports.updateTransaction = async (event) => {
     .update({
       TableName: TABLE_NAME,
       Key: { id },
-      UpdateExpression: `set ${condition.updateExpressions.join(',')}`,
-      ExpressionAttributeValues: condition.expressionAttributeValues,
+      UpdateExpression: `set ${condition.updateExpressions.join(',')}, updatedAt = :updatedAt`,
+      ExpressionAttributeValues: {
+        ...condition.expressionAttributeValues,
+        ':updatedAt': new Date().getTime(),
+      },
       ReturnValues: 'ALL_NEW',
     })
     .promise()
