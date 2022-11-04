@@ -1,12 +1,12 @@
 'use strict';
 
 const AWS = require('aws-sdk');
-const { normalizeData } = require('../utils/normalize_data');
+const { transformData } = require('../utils/tranform_data');
 const TABLE_NAME = process.env.TABLE_NAME;
 
 module.exports.createTransaction = async (event) => {
-  const transactionData = JSON.parse(event.body);
-  const dataNormalized = normalizeData.init(transactionData);
+  const data = JSON.parse(event.body);
+  const dataNormalized = transformData.init(data);
   const dynamoDB = new AWS.DynamoDB.DocumentClient();
   await (
     dynamoDB
