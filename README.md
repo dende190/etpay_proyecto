@@ -18,16 +18,14 @@ enviar peticiones a una API,
 ### Solicitar informacion (GET) 🧐
 #### Solicitar todos los datos
 **URL**:
-[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction]
-(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction)
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction)
 
 Usando esta url vas a poder obtener todas las transacciones que existen en la
 base de datos 😱
 
 #### Solicitar solo un dato
 **URL**:
-[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}]
-(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
 
 **Parametro de la url ({id})**: este es el indentificador con el que se creo el
 registro (puedes obtenerlo tambien revisando todos los datos)
@@ -37,8 +35,7 @@ Usando esta url vas a poder obtener el registro que buscas en las transacciones
 
 ## Crear un registro (POST) 🤓
 **URL**:
-[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction]
-(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction)
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction)
 
 Puedes usar cualquiera de los dos formatos JSON mostrados acontinuacion para
 crear una nueva transaccion en la base de datos:
@@ -92,8 +89,7 @@ crear una nueva transaccion en la base de datos:
 
 ## Actualizar un registro (PUT) 😰
 **URL**:
-[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}]
-(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
 
 **Parametro de la url ({id})**: este es el indentificador con el que se creo el
 registro (puedes obtenerlo tambien revisando todos los datos)
@@ -114,8 +110,7 @@ modificar mas de un valor)
 
 ## Eliminar un registro (DELETE) ☠️
 **URL**:
-[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}]
-(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/{id}](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/ID)
 
 **Parametro de la url ({id})**: este es el indentificador con el que se creo el
 registro (puedes obtenerlo tambien revisando todos los datos)
@@ -125,8 +120,7 @@ atras !
 
 ## Consltas mas elavoradas (POST) 🧑🏽‍💻
 **URL**:
-[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/query]
-(https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/query)
+[a https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/query](https://d1w4cees06.execute-api.us-east-1.amazonaws.com/transaction/query)
 
 Desde esta URL podras hacer consultas mas elaboradas para traer informacion, no
 necesitas entrar a una base de datos para obtener los datos que quieres y de
@@ -161,7 +155,10 @@ Con esto podras tener los datos que necesites como todo un desarrollador
 buscando en la base de datos
 
 ## Iniciar proyecto para desarrollo 🧑🏽‍💻
-1. Abrir la consola
-2. Correr el comando `npm i` (instalar las dependencias usadas en el proyecto)
-3. Correr el comando `npm run database_init` (generar los primeros registros en
+1. descomprimir el ZIP enviado
+  - etpay.zip
+2. Abrir la consola
+3. Correr el comando `npm i` (instalar las dependencias usadas en el proyecto)
+4. Correr el comando `npm run database_init` (generar los primeros registros en
 la base de datos)
+5.
